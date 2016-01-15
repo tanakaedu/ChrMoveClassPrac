@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
         /** キャラクターY速度*/
         List<float> vys = new List<float>();
         /** 乱数*/
-        Random rand = new Random();
+        public static Random rand = new Random();
         /** 重力加速度*/
         const float GRAVITY = 5f;
         /** 加速度*/
@@ -49,33 +49,13 @@ namespace WindowsFormsApplication1
         {
             float nx, ny;
 
+            CStraight.UpdateAll();
+
             for (int i = 0; i < labels.Count; i++)
             {
                 // ラベルの種類を特定する
                 switch (types[i])
                 {
-                        // 等速運動
-                    case CHRTYPE.CHR_STRAIGHT:
-                        // X移動
-                        nx = posxs[i] + vxs[i];
-                        // 跳ね返り
-                        if ((nx < 0f) || (nx+labels[i].Width > ClientSize.Width))
-                        {
-                            vxs[i] = -vxs[i];
-                            nx = posxs[i] + vxs[i];
-                        }
-                        // Y移動
-                        ny = posys[i] + vys[i];
-                        // 跳ね返り
-                        if ((ny < 0f) || (ny+labels[i].Height > ClientSize.Height)) {
-                            vys[i] = -vys[i];
-                            ny = posys[i] + vys[i];
-                        }
-                        // 書き戻し
-                        posxs[i] = nx;
-                        posys[i] = ny;
-                        break;
-
                         // 重力移動
                     case CHRTYPE.CHR_GRAVITY:
                         // X移動
@@ -133,7 +113,7 @@ namespace WindowsFormsApplication1
         /** 直線移動キャラ生成*/
         private void button1_Click(object sender, EventArgs e)
         {
-            InstantiateChr(CHRTYPE.CHR_STRAIGHT);
+            CStraight.InstantiateChr();
         }
 
         /** 重力キャラ生成*/
