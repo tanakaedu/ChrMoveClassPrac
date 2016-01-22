@@ -49,8 +49,7 @@ namespace WindowsFormsApplication1
         {
             float nx, ny;
 
-            CStraight.UpdateAll();
-            CGravity.UpdateAll();
+            CChr.UpdateAll();
 
             for (int i = 0; i < labels.Count; i++)
             {

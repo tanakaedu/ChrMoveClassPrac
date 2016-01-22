@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
             label.Text = "○";
         }
 
-        protected void Update()
+        protected override void Update()
         {
             float nx, ny;
             // X移動

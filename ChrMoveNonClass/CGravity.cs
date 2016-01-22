@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
             vy = 0f;
         }
 
-        protected void Update()
+        protected override void Update()
         {
             float nx, ny;
             // X移動

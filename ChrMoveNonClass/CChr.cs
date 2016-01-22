@@ -6,7 +6,8 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    class CChr
+    /** CChrは抽象クラス。new CChr()はできない。継承する*/
+    abstract class CChr
     {
         /** 自分のインスタンス*/
         protected static List<CChr> we = new List<CChr>();
@@ -50,6 +51,9 @@ namespace WindowsFormsApplication1
             // フォームに追加
             Form1.ActiveForm.Controls.Add(label);
         }
+
+        /** 更新処理の抽象関数。これでUpdateの呼び出しが可能になる*/
+        protected abstract void Update();
 
         public static void UpdateAll()
         {
