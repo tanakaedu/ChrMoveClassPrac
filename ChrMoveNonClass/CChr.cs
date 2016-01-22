@@ -63,5 +63,18 @@ namespace WindowsFormsApplication1
             }
         }
 
+        /** Xの移動+跳ね返り*/
+        protected void moveX()
+        {
+            float nx = posx + vx;
+            // 跳ね返り
+            if ((nx < 0f) || (nx + label.Width > Form1.ActiveForm.ClientSize.Width))
+            {
+                vx = -vx;
+                nx = posx + vx;
+            }
+            posx = nx;
+            label.Left = (int)posx;
+        }
     }
 }

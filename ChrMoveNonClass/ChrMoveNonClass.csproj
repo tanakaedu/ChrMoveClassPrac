@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAdd.cs" />
     <Compile Include="CChr.cs" />
     <Compile Include="CGravity.cs" />
     <Compile Include="CStraight.cs" />
